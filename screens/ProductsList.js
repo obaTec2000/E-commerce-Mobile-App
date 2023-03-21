@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
-import { getProducts } from "../services/ProductsService";
-import { Product } from "../components/Product";
+import React, {useEffect, useState} from "react";
+import {View, Text, FlatList, StyleSheet} from "react-native";
+import { getProducts } from "../services/ProductsServices";
+import { Product } from "../components/Products";
 
-export function ProductsList({ navigation }) {
+export function ProductsList({navigation}){
 
-    function renderProduct({ item: product }) {
-        return (
-            <Product
+    function renderProduct({item: product}){
+        return(
+            <Product 
                 {...product}
                 onPress={() => {
-                    navigation.navigate('ProductDetails', { productId: product.id })
+                    navigation.navigate('ProductDetails', {productId: product.id})
                 }}
             />
         )
@@ -22,8 +22,8 @@ export function ProductsList({ navigation }) {
         setProducts(getProducts())
     })
 
-    return (
-        <FlatList
+    return(
+        <FlatList 
             style={styles.productsList}
             contentContainerStyle={styles.productsListContainer}
             keyExtractor={(item) => item.id.toString()}
@@ -36,11 +36,11 @@ export function ProductsList({ navigation }) {
 
 const styles = StyleSheet.create({
     productsList: {
-        backgroundColor: "#eeeeee",
+      backgroundColor: "#eeeeee",
     },
     productsListContainer: {
-        backgroundColor: "#eeeeee",
-        paddingVertical: 8,
-        marginHorizontal: 8,
+      backgroundColor: "#eeeeee",
+      paddingVertical: 8,
+      marginHorizontal: 8,
     },
-});
+  });
