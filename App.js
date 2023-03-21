@@ -12,7 +12,7 @@ function App() {
 }
 
 const styles = StyleSheet.create({
-  Container: { 
+  Container: {
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
