@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import {Text, StyleSheet, View, Image, ScrollView, SafeAreaView, Button} from "react-native";
-import { getProduct } from '../services/ProductsService';
+import { getProduct } from '../services/ProductsServices';
 import {CartContext} from "../CartContext";
 
 export function ProductDetails({route}) {
